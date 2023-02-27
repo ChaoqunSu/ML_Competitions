@@ -6,6 +6,7 @@
 
 # @lc code=start
 class Solution:
+    # 2
     def removeElement(self, nums: List[int], val: int) -> int:
         slow = 0
         for fast in range (len(nums)):

@@ -16,6 +16,13 @@ class Solution:
         if sum(nums) < target:
             return 0
         for i in range(n):
+            """
+            # 这个应该也是对的，但是每次判定都要全部再加和再比较，时间复杂度更高一些
+            while sum(nums[slow:i+1])>=target:
+                # 最重要的就是这个取min,一直卡在这,因为一直要更新res找到最小的res
+                res = min(res, i - slow+1)
+                slow += 1
+            """
             Sum += nums[i]
             while Sum >= target:
                 res = min(res, i - slow+1)

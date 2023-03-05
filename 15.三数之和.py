@@ -39,6 +39,8 @@ class Solution:
                     # 去重逻辑很重要，总是想不清楚
                     # 要考虑对后两位去重,因为考虑到如果是-3,1,1,1,2,2,2,最终的结果应该是[[-3,1,2]]
                     # 而不是[[-3,1,2],[-3,1,2],[-3,1,2]]
+                    # 特别注意为什么是while且条件是left!right，这里是为了把所有重复的都跳过去,
+                    # 但是别跳过头导致left和right相等了
                     while left != right and nums[left] == nums[left + 1]: left += 1
                     while left != right and nums[right] == nums[right - 1]: right -= 1
                     left += 1

@@ -54,7 +54,7 @@ class Solution:
         result = [0]*k
         # 编程时很容易错的思想,这里k-1是取得到的,-1是取不到的,所以是从k-1降序到0
         for i in range(k-1, -1, -1):
-            # 这里的[1]指的是key对应的value(即频率)
+            # 因为存在堆里的是pair值对,所以这里的[1]指的是key对应的value(即频率)
             result[i] = heapq.heappop(pri_que)[1]
         return result
 

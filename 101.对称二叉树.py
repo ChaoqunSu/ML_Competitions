@@ -37,6 +37,9 @@ class Solution:
         outside = self.compare(left.left, right.right)
         # 左子树的右和右子树的左
         inside = self.compare(left.right, right.left)
+        # 前面这两行会反复调用该函数,
+        # 直到执行完了这两行,
+        # outside和inside都会得到前面四句if和elif返回的True/False
         # 逻辑处理
         isSame = outside and inside
         return isSame
